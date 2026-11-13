@@ -20,7 +20,6 @@ Los diez ejercicios están implementados. Se incluyen los dos archivos originale
 - Se ejecutaron las pruebas `assert` de los diez ejercicios.
 - Se comprobó una conexión TCP real al instrumento virtual ADS3202 en el puerto 5555, identificación y barrido de ambos canales. La verificación dio coincidencia en ambos casos.
 - Se revisó el registro proporcionado: 121 mediciones válidas, 8 líneas rechazadas y 11 líneas ignoradas (incluida la línea terminal vacía). La línea separada por tabulaciones es válida.
-- Pendientes antes de entregar: completar nombre y apellido de todos los integrantes, revisar/completar el registro literal de uso de IA y preparar la defensa individual.
 
 ## Requisitos
 
