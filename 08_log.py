@@ -75,4 +75,12 @@ if __name__ == "__main__":
     assert analizar_linea(" ") == (None, None)
     assert analizar_linea(linea.replace("09:14:02", "25:61:00"))[1] is not None
     assert analizar_linea(linea.replace("CH1", "CH3"))[1] is not None
+    # Comprobamos tambien el archivo que paso la catedra
+    from pathlib import Path
+    if Path("mediciones.log").is_file():
+        series, rechazadas = leer_log("mediciones.log")
+        assert len(rechazadas) == 8
+        assert len(series[("ADS3202", "CH1", "FREQ")]) == 21
+        assert sum(len(serie) for serie in series.values()) == 121
+
     print("pruebas OK")
