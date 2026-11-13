@@ -4,7 +4,7 @@ Implementación del **banco de mediciones automatizado en Python**, organizada e
 
 ## Integrantes
 
-- **Completar nombre y apellido antes de entregar.**
+- **Completar nombre y apellido de quien o quienes presentan el trabajo.**
 
 ## Estado de archivos y pruebas
 
@@ -17,35 +17,55 @@ Los diez ejercicios están implementados. Se incluyen los dos archivos originale
 
 ## Requisitos
 
-- Python 3, sin paquetes externos.
-- Copiar en la raíz los archivos originales `instrumento_virtual.py` y `mediciones.log`.
+- **Python 3.12.10** (versión utilizada por el estudiante en Windows).
+- Solo biblioteca estándar de Python: no es necesario ejecutar `pip install`.
+- Los archivos originales `instrumento_virtual.py` y `mediciones.log` ya están en la raíz; conservarlos sin cambios.
 
-## Ejecución
+## Cómo lo ejecuto en Windows con Python 3.12.10
 
-Cada ejercicio se ejecuta solo desde la raíz:
+Descargo el repositorio de GitHub y extraigo el ZIP. Abro la carpeta con VS Code y, desde su terminal PowerShell, compruebo la versión:
 
-```bash
-python3 01_identificacion.py
-python3 02_magnitudes.py
-# ... hasta
-python3 10_informe.py
+```powershell
+python --version
 ```
 
-Para la integración, iniciar en otra terminal:
+Debe mostrar `Python 3.12.10`. Si tengo varias versiones instaladas, puedo usar `py -3.12` en lugar de `python`.
 
-```bash
-python3 instrumento_virtual.py
+Para ejecutar cada ejercicio y sus pruebas `assert`:
+
+```powershell
+python 01_identificacion.py
+python 02_magnitudes.py
+python 03_comandos.py
+python 04_configurar.py
+python 05_cliente.py
+python 06_barrido.py
+python 07_verificacion.py
+python 08_log.py
+python 09_estadistica.py
+python 10_informe.py
 ```
 
-Después:
+Para probar todo junto, primero abro **una terminal** y ejecuto:
 
-```bash
-python3 05_cliente.py
-python3 06_barrido.py
-python3 10_informe.py
+```powershell
+python instrumento_virtual.py
 ```
 
-`06_barrido.py` utiliza un instrumento simulado en memoria para sus pruebas; el programa integrado realiza el barrido real por TCP. Puertos de la cátedra: osciloscopio 127.0.0.1:5555, multímetro 127.0.0.1:5556.
+Dejo esa terminal abierta y, en **otra terminal** de la misma carpeta, ejecuto:
+
+```powershell
+python 05_cliente.py
+python 10_informe.py
+```
+
+El instrumento virtual escucha en `127.0.0.1:5555` (osciloscopio) y `127.0.0.1:5556` (multímetro). Para apagarlo, pulso `Ctrl+C` en la primera terminal.
+
+Las pruebas de `06_barrido.py` usan un instrumento falso en memoria para comprobar casos estables; `10_informe.py` es la prueba integrada con red y el log original.
+
+## Desarrollo y revisión
+
+Organizo el trabajo en diez archivos, uno por ejercicio. Utilizo IA como herramienta auxiliar para generar propuestas de código, detectar problemas, preparar pruebas y revisar el funcionamiento. **La revisión personal, la comprensión de cada función y la defensa oral son responsabilidad de quien presenta el trabajo.** El registro de la asistencia recibida se encuentra en `bitacora-ia.md` y debe completarse con los cambios y pruebas realizados por el estudiante.
 
 ## Notas de implementación
 
@@ -53,7 +73,7 @@ python3 10_informe.py
 - `leer_log` devuelve `(series, rechazadas)` con series indexadas por `(equipo, canal, magnitud)`.
 - Las mediciones fluctuantes se comparan con tolerancia relativa, no igualdad exacta.
 - Antes de la defensa, estudiar y revisar todas las funciones y pruebas; la cátedra exige explicarlas individualmente.
-- **Pendiente:** comprobar la compatibilidad exacta del protocolo contra el simulador original y ejecutar estadísticas sobre el log real.
+- Con el simulador y el log ya incorporados, antes de entregar debo volver a ejecutar las pruebas en mi equipo con Python 3.12.10, registrar los resultados y verificar que puedo explicar cada archivo.
 
 ## Uso de IA
 
