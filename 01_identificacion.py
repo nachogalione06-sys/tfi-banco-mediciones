@@ -1,11 +1,29 @@
-"""Ejercicio 1: identificación SCPI."""
+# Ejercicio 1 - Identificar el instrumento
+
 def parsear_idn(respuesta):
-    if not isinstance(respuesta, str) or respuesta.strip().startswith("ERROR:"):
+    if not isinstance(respuesta, str):
         return None
-    campos = [campo.strip() for campo in respuesta.strip().split(",")]
-    if len(campos) not in (4, 5) or not all(campos[:4]):
+
+    if respuesta.strip() == "" or respuesta.strip().startswith("ERROR:"):
         return None
-    return dict(zip(("fabricante", "modelo", "serie", "version"), campos[:4]))
+
+    datos = respuesta.split(",")
+
+    # El multimetro tiene un dato extra al final, que no necesitamos
+    if len(datos) != 4 and len(datos) != 5:
+        return None
+
+    datos = [dato.strip() for dato in datos]
+    if not all(datos[:4]):
+        return None
+
+    return {
+        "fabricante": datos[0],
+        "modelo": datos[1],
+        "serie": datos[2],
+        "version": datos[3]
+    }
+
 
 if __name__ == "__main__":
     assert parsear_idn("OWON,ADS3202,25470803,V1.2.0")["modelo"] == "ADS3202"
