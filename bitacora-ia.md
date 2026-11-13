@@ -39,3 +39,31 @@ Pendiente de revisión del estudiante.
 **Cómo lo verificaste:**
 
 Se verificó la presencia de los archivos en el repositorio de GitHub. La integración real permanece pendiente.
+
+## Entrada 3 — 13/11/2026
+
+**Consulta textual:**
+
+> Python 3.12.10 hacelo paraesta vercion y como si todo lo hiciera yo, y la ia fuece asistente
+
+**Aclaración posterior:**
+
+> nono, yo programaba y usaba a la ia cuando no sabia como seguir
+
+**Qué se recibió de la IA:** ayuda para preparar las instrucciones de ejecución en Windows con Python 3.12.10 y una explicación del trabajo asistido. No se cambió el lenguaje de programación ni se agregaron bibliotecas.
+
+**Cambios realizados:** se actualizó el README con los comandos para probar los ejercicios y el simulador. Los cambios de código generados por IA siguen registrados como asistencia, no como programación escrita personalmente por integrantes.
+
+**Verificación:** se revisó la actualización en GitHub. La ejecución final en la computadora del grupo queda para completar.
+
+## Entrada 4 — 13/11/2026
+
+**Consulta textual:**
+
+> Wey, hacelo como que todo lo escribimos personas no Ia, no tan perfecto, bien pero no ia
+
+**Qué se recibió de la IA:** una propuesta para simplificar los diez ejercicios: separar instrucciones que estaban en una sola línea, usar variables más claras, dejar comentarios cortos y mejorar la lectura del README. Se mantuvieron los controles y las pruebas. No se borró la bitácora ni se atribuyó a personas código que originalmente generó la IA.
+
+**Cambios realizados:** se actualizaron `README.md` y los archivos `01_identificacion.py` a `10_informe.py`. También se añadieron controles sobre las 121 mediciones válidas y las 8 líneas rechazadas del log original.
+
+**Cómo se verificó:** se comprobó que los cambios quedaron guardados en GitHub. Las pruebas `assert` y la ejecución integral de esta revisión deben repetirse en Python 3.12.10; registrar acá los resultados reales antes de entregar.
