@@ -1,86 +1,68 @@
-# Trabajo Final Integrador — Programación (UTN, Telecomunicaciones, 2026)
+# Trabajo final de Programación - Banco de mediciones
 
-Implementación del **banco de mediciones automatizado en Python**, organizada en diez ejercicios conforme a la consigna `TUT-PROG-TFI-Consigna.pdf`.
+Tecnicatura en Telecomunicaciones - UTN FRBA (2026)
+
+El trabajo consiste en hacer un programa en Python que se conecte a un instrumento virtual, lea mediciones y arme un informe. Está dividido en diez ejercicios, como pide la consigna.
 
 ## Integrantes
 
-Trabajo Final Integrador — Programación · UTN FRBA · 2026
+- Ignacio Galione
+- Falta agregar nombre y apellido
+- Falta agregar nombre y apellido
+- Falta agregar nombre y apellido
 
-1. Ignacio Galione
-2. **Pendiente: nombre y apellido del integrante 2**
-3. **Pendiente: nombre y apellido del integrante 3**
-4. **Pendiente: nombre y apellido del integrante 4**
+Somos hasta cuatro personas en total. Antes de entregar hay que completar los nombres.
 
-> La consigna admite hasta cuatro integrantes **en total**. Reemplazar los datos pendientes por los nombres y apellidos completos antes de entregar. El grupo debe poder defender individualmente los diez ejercicios.
+## Archivos
 
-## Estado de archivos y pruebas
+Los ejercicios van del `01_identificacion.py` al `10_informe.py`.
 
-Los diez ejercicios están implementados. Se incluyen los dos archivos originales de la cátedra, `instrumento_virtual.py` y `mediciones.log`, que **no deben modificarse**.
+También están `instrumento_virtual.py` y `mediciones.log`, que son los archivos de la cátedra. Esos dos no se modifican.
 
-- Se ejecutaron las pruebas `assert` de los diez ejercicios.
-- Se comprobó una conexión TCP real al instrumento virtual ADS3202 en el puerto 5555, identificación y barrido de ambos canales. La verificación dio coincidencia en ambos casos.
-- Se revisó el registro proporcionado: 121 mediciones válidas, 8 líneas rechazadas y 11 líneas ignoradas (incluida la línea terminal vacía). La línea separada por tabulaciones es válida.
+## Para probarlo
 
-## Requisitos
+Usamos **Python 3.12.10** en Windows. No hay que instalar paquetes con pip.
 
-- **Python 3.12.10** (versión utilizada por el estudiante en Windows).
-- Solo biblioteca estándar de Python: no es necesario ejecutar `pip install`.
-- Los archivos originales `instrumento_virtual.py` y `mediciones.log` ya están en la raíz; conservarlos sin cambios.
-
-## Cómo lo ejecuto en Windows con Python 3.12.10
-
-Descargo el repositorio de GitHub y extraigo el ZIP. Abro la carpeta con VS Code y, desde su terminal PowerShell, compruebo la versión:
+Abrir la carpeta del proyecto en VS Code y entrar a la terminal. Para comprobar Python:
 
 ```powershell
 python --version
 ```
 
-Debe mostrar `Python 3.12.10`. Si tengo varias versiones instaladas, puedo usar `py -3.12` en lugar de `python`.
-
-Para ejecutar cada ejercicio y sus pruebas `assert`:
+Para probar un ejercicio, por ejemplo:
 
 ```powershell
 python 01_identificacion.py
-python 02_magnitudes.py
-python 03_comandos.py
-python 04_configurar.py
-python 05_cliente.py
-python 06_barrido.py
-python 07_verificacion.py
-python 08_log.py
-python 09_estadistica.py
-python 10_informe.py
 ```
 
-Para probar todo junto, primero abro **una terminal** y ejecuto:
+Cada archivo tiene pruebas con `assert`. Se pueden ejecutar del 1 al 10.
+
+Para probar la conexión al osciloscopio, abrir **dos terminales** en la carpeta del proyecto.
+
+En la primera:
 
 ```powershell
 python instrumento_virtual.py
 ```
 
-Dejo esa terminal abierta y, en **otra terminal** de la misma carpeta, ejecuto:
+Dejarla abierta. En la segunda:
 
 ```powershell
 python 05_cliente.py
 python 10_informe.py
 ```
 
-El instrumento virtual escucha en `127.0.0.1:5555` (osciloscopio) y `127.0.0.1:5556` (multímetro). Para apagarlo, pulso `Ctrl+C` en la primera terminal.
+El primero comprueba la conexión y el segundo muestra el informe completo. Para apagar el instrumento se usa `Ctrl+C` en la primera terminal.
 
-Las pruebas de `06_barrido.py` usan un instrumento falso en memoria para comprobar casos estables; `10_informe.py` es la prueba integrada con red y el log original.
+## Cosas que revisamos
 
-## Desarrollo y revisión
+- El instrumento virtual usa el puerto 5555 para el osciloscopio y el 5556 para el multímetro.
+- Se miden frecuencia, voltaje pico a pico y voltaje eficaz de CH1 y CH2.
+- El archivo `mediciones.log` tiene 121 mediciones válidas y 8 líneas rechazadas por errores en los datos.
+- Las mediciones tienen pequeñas variaciones, por eso se comparan con una tolerancia y no con `==`.
 
-Organizo el trabajo en diez archivos, uno por ejercicio. Utilizo IA como herramienta auxiliar para generar propuestas de código, detectar problemas, preparar pruebas y revisar el funcionamiento. **La revisión personal, la comprensión de cada función y la defensa oral son responsabilidad de quien presenta el trabajo.** El registro de la asistencia recibida se encuentra en `bitacora-ia.md` y debe completarse con los cambios y pruebas realizados por el estudiante.
-
-## Notas de implementación
-
-- Se usan `importlib.import_module` para importar módulos con nombres que comienzan por números, como exige la consigna.
-- `leer_log` devuelve `(series, rechazadas)` con series indexadas por `(equipo, canal, magnitud)`.
-- Las mediciones fluctuantes se comparan con tolerancia relativa, no igualdad exacta.
-- Antes de la defensa, estudiar y revisar todas las funciones y pruebas; la cátedra exige explicarlas individualmente.
-- Con el simulador y el log ya incorporados, antes de entregar debo volver a ejecutar las pruebas en mi equipo con Python 3.12.10, registrar los resultados y verificar que puedo explicar cada archivo.
+Antes de entregar tenemos que ejecutar todo en nuestras computadoras, completar los integrantes y asegurarnos de poder explicar cada ejercicio en la defensa.
 
 ## Uso de IA
 
-Ver `bitacora-ia.md`. Debe mantenerse al día con cada uso posterior de IA que afecte la entrega.
+La asistencia de IA durante el desarrollo se registra en `bitacora-ia.md`, como pide la consigna.
