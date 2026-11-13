@@ -1,29 +1,57 @@
-"""Ejercicio 2: conversión de magnitudes y prefijos SI."""
+# Ejercicio 2 - Pasar mediciones a numeros y unidades mas faciles de leer
+
 import math
 
-PREFIJOS = ((-12, "p"), (-9, "n"), (-6, "u"), (-3, "m"), (0, ""), (3, "k"), (6, "M"), (9, "G"))
+prefijos = [
+    (-12, "p"),
+    (-9, "n"),
+    (-6, "u"),
+    (-3, "m"),
+    (0, ""),
+    (3, "k"),
+    (6, "M"),
+    (9, "G")
+]
+
 
 def a_numero(texto):
     try:
         numero = float(texto)
-        return numero if math.isfinite(numero) else None
-    except (TypeError, ValueError):
-        return None
+        if math.isfinite(numero):
+            return numero
+    except (ValueError, TypeError):
+        pass
+    return None
+
 
 def con_unidad(valor, unidad):
-    if not isinstance(valor, (int, float)) or not math.isfinite(valor):
+    if not isinstance(valor, (int, float)):
+        return None
+    if not math.isfinite(valor):
         return None
     if valor == 0:
         return f"0 {unidad}"
-    exponente = max(-12, min(9, 3 * math.floor(math.log10(abs(valor)) / 3)))
-    escalado = valor / (10 ** exponente)
-    escalado = round(escalado, 3)
-    if abs(escalado) >= 1000 and exponente < 9:
+
+    exponente = 0
+    for potencia, prefijo in prefijos:
+        convertido = abs(valor) / (10 ** potencia)
+        if 1 <= convertido < 1000:
+            exponente = potencia
+            break
+    else:
+        # Si queda fuera de los prefijos disponibles, usamos el extremo
+        exponente = -12 if abs(valor) < 1e-12 else 9
+
+    numero = round(valor / (10 ** exponente), 3)
+
+    # Puede pasar que al redondear 999.9999 termine siendo 1000
+    if abs(numero) >= 1000 and exponente < 9:
         exponente += 3
-        escalado = round(valor / 10 ** exponente, 3)
-    prefijo = dict(PREFIJOS)[exponente]
-    texto = f"{escalado:g}"
-    return f"{texto} {prefijo}{unidad}"
+        numero = round(valor / (10 ** exponente), 3)
+
+    prefijo = dict(prefijos)[exponente]
+    return f"{numero:g} {prefijo}{unidad}"
+
 
 if __name__ == "__main__":
     assert a_numero("1.000000E+03") == 1000.0
