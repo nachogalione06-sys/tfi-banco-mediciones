@@ -47,6 +47,8 @@ if __name__ == "__main__":
         try:
             respuesta = equipo.preguntar("*IDN?")
             assert parsear_idn(respuesta)["modelo"] == "ADS3202"
+            assert equipo.preguntar(":CH1:DISPlay?") in ("ON", "OFF")
+            assert equipo.preguntar(":CH1:COUPling?") in ("AC", "DC", "GND")
             print("Pruebas TCP OK")
         finally:
             equipo.cerrar()
