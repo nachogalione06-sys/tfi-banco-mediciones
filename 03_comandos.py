@@ -1,25 +1,39 @@
-"""Ejercicio 3: sintaxis de órdenes y consultas SCPI."""
+# Ejercicio 3 - Revisar si los comandos estan bien escritos
+
+
 def es_consulta(comando):
-    return isinstance(comando, str) and comando.endswith("?")
+    if not isinstance(comando, str):
+        return False
+    return comando.endswith("?")
+
 
 def validar(comando):
-    if not isinstance(comando, str) or not comando.strip():
-        return "Comando vacío"
-    if not comando.startswith((":", "*")):
-        return "Debe empezar con : o *"
+    if not isinstance(comando, str) or comando.strip() == "":
+        return "El comando esta vacio"
+
+    if not comando.startswith(":") and not comando.startswith("*"):
+        return "Tiene que empezar con : o *"
+
     if "  " in comando:
-        return "Hay espacios consecutivos"
+        return "Hay dos espacios seguidos"
+
     if comando.count("?") > 1:
-        return "Hay más de un signo ?"
+        return "Hay mas de un signo de pregunta"
+
     if "?" in comando and not comando.endswith("?"):
-        return "El signo ? debe ir al final"
+        return "El signo de pregunta tiene que ir al final"
+
     partes = comando.split(" ")
+
     if es_consulta(comando):
         if len(partes) != 1:
-            return "Una consulta no lleva argumentos"
-    elif len(partes) > 2 or (len(partes) == 2 and not partes[1]):
-        return "Una orden admite un único argumento"
+            return "Las consultas no llevan argumentos"
+    else:
+        if len(partes) > 2 or (len(partes) == 2 and partes[1] == ""):
+            return "La orden solo puede llevar un argumento"
+
     return None
+
 
 if __name__ == "__main__":
     assert es_consulta(":CH1:DISPlay?")
