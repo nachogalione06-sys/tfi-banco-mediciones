@@ -6,9 +6,14 @@ Implementación del **banco de mediciones automatizado en Python**, organizada e
 
 - **Completar nombre y apellido antes de entregar.**
 
-## Estado y archivos faltantes
+## Estado de archivos y pruebas
 
-Los diez ejercicios están implementados con pruebas `assert`. **Faltan los dos archivos originales que debe proporcionar la cátedra:** `instrumento_virtual.py` y `mediciones.log`. No se generaron sustitutos ni se modificaron, porque la consigna lo prohíbe. Hasta disponer de ambos, la prueba integral con datos reales está pendiente. La implementación debe verificarse contra el simulador original antes de entregar.
+Los diez ejercicios están implementados. Se incluyen los dos archivos originales de la cátedra, `instrumento_virtual.py` y `mediciones.log`, que **no deben modificarse**.
+
+- Se ejecutaron las pruebas `assert` de los diez ejercicios.
+- Se comprobó una conexión TCP real al instrumento virtual ADS3202 en el puerto 5555, identificación y barrido de ambos canales. La verificación dio coincidencia en ambos casos.
+- Se revisó el registro proporcionado: 121 mediciones válidas, 8 líneas rechazadas y 11 líneas ignoradas (incluida la línea terminal vacía). La línea separada por tabulaciones es válida.
+- Pendientes antes de entregar: completar nombre y apellido de todos los integrantes, revisar/completar el registro literal de uso de IA y preparar la defensa individual.
 
 ## Requisitos
 
