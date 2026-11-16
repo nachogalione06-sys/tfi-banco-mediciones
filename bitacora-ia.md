@@ -9,7 +9,7 @@ Python 3.12.10
 
 **El prompt**
 
-> Estoy con el primer ejercicio. El *IDN? devuelve todo junto separado por comas, ¿cómo hago para separar el fabricante, modelo, serie y versión? ¿Conviene una lista o un diccionario?
+> Che estoy con el 01, el *IDN? me devuelve todo en una sola linea con comas. como lo separo para guardar fabricante, modelo, serie y version? y el multimetro tiene 5 datos, eso como lo manejo?
 
 **Qué contestó**
 
@@ -27,7 +27,7 @@ Usamos una respuesta del osciloscopio, otra del multímetro y varias incorrectas
 
 **El prompt**
 
-> Para convertir los valores a kHz o mV, ¿tengo que hacer un if para cada unidad? Me parece que va a quedar larguísimo.
+> Bueno ahora el 02. tengo que pasar valores como 1000 Hz a 1 kHz y 0.707 V a mV. no quiero hacer mil if, hay una forma mas simple? tambien tengo el caso ese de 999.9999 que al redondear se rompe
 
 **Qué contestó**
 
@@ -45,7 +45,7 @@ Probamos `1000 Hz`, `2500 Hz`, `0.707 V`, `0 V` y el caso de `999.9999 Hz`. Tamb
 
 **El prompt**
 
-> No entendemos cómo controlar todos los errores de un comando. ¿Hay alguna manera simple de saber si empieza con dos puntos y termina en signo de pregunta?
+> En el 03 me piden revisar los comandos SCPI. como compruebo si empiezan con : o * y si terminan con ? y de paso controlar los espacios y argumentos? porque me estoy enredando con los if
 
 **Qué contestó**
 
@@ -63,7 +63,7 @@ Hicimos pruebas con comandos correctos y otros mal escritos, como `:CH1:DISPlay?
 
 **El prompt**
 
-> Quise importar 03_comandos.py desde el ejercicio 4 y Python me tira error por el nombre del archivo. ¿Cómo lo importo si la consigna me obliga a dejar ese nombre?
+> Estoy haciendo el 04 y quiero usar validar del archivo 03_comandos.py, pero no me deja importarlo porque el nombre empieza con numero. como hago sin cambiar el nombre que pide el pdf?
 
 **Qué contestó**
 
@@ -81,7 +81,7 @@ Comparamos los cuatro comandos generados con los del ejemplo y revisamos que tod
 
 **El prompt**
 
-> La conexión abre, pero cuando mando *IDN? el programa queda esperando. ¿Por qué pasa eso si el socket está conectado?
+> En el 05 tengo la conexion con socket pero cuando pregunto *IDN? se queda esperando. hay algo que tenga que mandar al final del comando? y como leo la respuesta completa sin que quede colgado?
 
 **Qué contestó**
 
@@ -99,7 +99,7 @@ Con el instrumento virtual encendido, la consulta `*IDN?` tiene que devolver el 
 
 **El prompt**
 
-> Tenemos que medir frecuencia, PKPK y CYCRMS en los dos canales. ¿Podemos hacerlo con un for para no escribir seis veces lo mismo?
+> Para el 06 tengo que pedir 3 mediciones por cada canal, serian 6 consultas. puedo hacerlo con for para no repetir codigo? y si el equipo contesta error necesito guardar el texto igual
 
 **Qué contestó**
 
@@ -117,7 +117,7 @@ Usamos una clase sencilla que tiene un método `preguntar()` y devuelve respuest
 
 **El prompt**
 
-> El voltaje eficaz medido nunca es exactamente igual al calculado. Si hacemos medido == teorico nos da falso. ¿Cómo sabemos cuándo está dentro de lo normal?
+> En el 07 tengo un problema: el vrms que mide el equipo no da exactamente igual al que calculo. como lo comparo sin usar ==? la consigna habla de 2% de tolerancia y no me queda claro como aplicarlo
 
 **Qué contestó**
 
@@ -135,7 +135,7 @@ Probamos una medición cercana al valor esperado y otra bastante diferente. La p
 
 **El prompt**
 
-> En mediciones.log hay una línea separada por tabulaciones y otra que dice NaN. Con split(" ") una no se separa bien y con float() la otra pasa. ¿Cómo lo controlamos?
+> Revisame el 08, el mediciones.log tiene una linea con tabulaciones y otra con NaN. con split(" ") no me separa todo y float acepta el NaN. como valido eso y dejo registradas las lineas malas?
 
 **Qué contestó**
 
@@ -153,7 +153,7 @@ Con el registro suministrado se esperan 121 mediciones válidas, agrupadas en se
 
 **El prompt**
 
-> El desvío estándar me da división por cero cuando la lista tiene un solo número. ¿Qué corresponde devolver ahí?
+> Con el 09 tengo una duda. el desvio se divide por n-1 pero si hay un solo valor me tira division por cero. que hago en ese caso? y como compruebo el promedio con los datos del log?
 
 **Qué contestó**
 
@@ -171,7 +171,7 @@ Probamos una lista vacía, una de un solo valor y `[1, 2, 3]`. Con la frecuencia
 
 **El prompt**
 
-> Ya tenemos las funciones hechas, pero no sabemos cómo juntar los resultados sin hacer print dentro de armar_informe. ¿Cómo devolvemos todo como un solo texto?
+> Ahora el 10, como junto todo para generar el informe? quiero que armar_informe devuelva el texto y no imprima nada adentro. despues lo muestro desde el main con las mediciones de los dos canales
 
 **Qué contestó**
 
