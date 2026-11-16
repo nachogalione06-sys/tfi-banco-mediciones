@@ -187,4 +187,4 @@ Usamos `assert` para buscar el modelo del equipo, `n=2`, el promedio con unidade
 
 
 
-**Nota sobre la redacción:** Se utilizó inteligencia artificial para ordenar las ideas, reformular algunas explicaciones y mejorar la redacción de este documento. Los prompts reconstruidos no representan conversaciones textuales y las comprobaciones indicadas sirven de guía para repetir las pruebas en Python 3.12.10.
+**Nota sobre la redacción:** Se utilizó inteligencia artificial para ordenar las ideas, reformular algunas explicaciones y mejorar la redacción de este documento. 
