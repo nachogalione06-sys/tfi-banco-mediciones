@@ -8,10 +8,10 @@ El trabajo consiste en hacer un programa en Python que se conecte a un instrumen
 
 - Ignacio Galione
 - Nicolas Ariel Flores
-- Falta agregar nombre y apellido
-- Falta agregar nombre y apellido
+- Lautaro Bran
+- David Silguero
 
-Somos hasta cuatro personas en total. Antes de entregar hay que completar los nombres.
+El grupo está formado por cuatro integrantes.
 
 ## Archivos
 
@@ -61,7 +61,7 @@ El primero comprueba la conexión y el segundo muestra el informe completo. Para
 - El archivo `mediciones.log` tiene 121 mediciones válidas y 8 líneas rechazadas por errores en los datos.
 - Las mediciones tienen pequeñas variaciones, por eso se comparan con una tolerancia y no con `==`.
 
-Antes de entregar tenemos que ejecutar todo en nuestras computadoras, completar los integrantes y asegurarnos de poder explicar cada ejercicio en la defensa.
+Antes de entregar, tenemos que volver a probar todos los ejercicios en nuestras computadoras.
 
 ## Uso de IA
 
