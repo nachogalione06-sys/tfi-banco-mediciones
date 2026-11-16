@@ -186,16 +186,5 @@ Dejamos la función `armar_informe()` dedicada a construir el texto. La conexió
 Usamos `assert` para buscar el modelo del equipo, `n=2`, el promedio con unidades y el resultado de una verificación. Para la integración se inicia el instrumento en una terminal y se ejecuta `10_informe.py` en otra.
 
 
-## Otras consultas que se pueden hacer
-
-Son tres maneras distintas de plantear dudas sin asignarlas a ningún integrante.
-
-1. > No me sale el ejercicio de las unidades. Me anda con 1000 Hz, pero con 999.9999 me termina mostrando 1000 Hz en vez de 1 kHz. ¿Qué condición me está faltando?
-
-2. > Estoy leyendo los datos del archivo `mediciones.log`. Tengo una línea con tabulaciones y otra con `NaN`. ¿Podés explicarme paso a paso cómo revisar las dos cosas usando solo lo que viene con Python?
-
-3. > Quiero probar `barrer()` sin tener que levantar el osciloscopio virtual cada vez. La función recibe un objeto con `preguntar()`. ¿Cómo hago una clase sencilla que conteste valores fijos y me sirva para los `assert`?
-
----
 
 **Nota sobre la redacción:** Se utilizó inteligencia artificial para ordenar las ideas, reformular algunas explicaciones y mejorar la redacción de este documento. Los prompts reconstruidos no representan conversaciones textuales y las comprobaciones indicadas sirven de guía para repetir las pruebas en Python 3.12.10.
