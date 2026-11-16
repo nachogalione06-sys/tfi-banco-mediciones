@@ -43,4 +43,5 @@ if __name__ == "__main__":
     assert validar("CH1:DISPlay ON") is not None
     assert validar(":CH1:DISPlay??") is not None
     assert validar(":CH1:DISPlay ON?") is not None
+    assert validar(":CH1:SCALe 1 v") is not None
     print("pruebas OK")
