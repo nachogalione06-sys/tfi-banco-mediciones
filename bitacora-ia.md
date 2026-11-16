@@ -1,6 +1,6 @@
 # Bitácora de IA - Banco de mediciones automatizado
 
-Las consultas de este documento están reconstruidas a partir de los ejercicios y de las dudas tratadas durante el desarrollo. No son transcripciones textuales de conversaciones.
+Las diez consultas por ejercicio se conservaron como preguntas de estudio redactadas para repasar el código. Más abajo se distinguen los mensajes textuales realizados durante el desarrollo del repositorio.
 
 Materia: Programación - Tecnicatura Universitaria en Telecomunicaciones, UTN FRBA  
 Python 3.12.10
@@ -57,7 +57,7 @@ Separamos las comprobaciones en varios `if`. Primero revisamos si está vacío y
 
 **Cómo se comprueba**
 
-Hicimos pruebas con comandos correctos y otros mal escritos, como `:CH1:DISPlay??`, `CH1:DISPlay ON` y `:CH1:SCALe 1 v`.
+En `03_comandos.py` quedaron pruebas con `assert` para `:CH1:DISPlay??`, `CH1:DISPlay ON` y `:CH1:SCALe 1 v`. Este último caso se agregó para comprobar que una orden con dos argumentos se rechace.
 
 ## 4. Configuración - `04_configurar.py`
 
@@ -187,4 +187,67 @@ Usamos `assert` para buscar el modelo del equipo, `n=2`, el promedio con unidade
 
 
 
-**Nota sobre la redacción:** Se utilizó inteligencia artificial para ordenar las ideas, reformular algunas explicaciones y mejorar la redacción de este documento. 
+## Mensajes textuales registrados durante el desarrollo
+
+Estos mensajes sí se copiaron literalmente de la conversación donde se trabajó sobre el proyecto. Son distintos de las diez preguntas de estudio anteriores.
+
+### Preparación del repositorio
+
+**El prompt**
+
+> arma un repo en git con todo eso
+
+**Qué contestó y qué se cambió**
+
+La IA preparó el primer conjunto de archivos del proyecto, con funciones y pruebas de los diez ejercicios. También organizó el README y una primera bitácora.
+
+**Cómo se verificó**
+
+Se revisaron los archivos generados y posteriormente se subieron al repositorio de GitHub. El código requiere ejecutar sus pruebas después de cada revisión.
+
+### Subida a GitHub
+
+**El prompt**
+
+> ya lo cree con el no,bre ahora hacelo ahí
+
+**Qué contestó y qué se cambió**
+
+La IA localizó el repositorio `tfi-banco-mediciones` y cargó allí los ejercicios y la documentación. Después se incorporaron `instrumento_virtual.py` y `mediciones.log` proporcionados en la conversación.
+
+**Cómo se verificó**
+
+Se consultaron los archivos subidos desde GitHub. El instrumento virtual se comparó con el archivo original y el log se revisó para contar las mediciones válidas y rechazadas.
+
+### Versión de Python
+
+**El prompt**
+
+> Python 3.12.10 hacelo paraesta vercion y como si todo lo hiciera yo, y la ia fuece asistente
+
+**Qué contestó y qué se cambió**
+
+La IA adaptó las instrucciones del README para ejecutar los ejercicios con Python 3.12.10 en Windows, sin instalar paquetes externos.
+
+**Cómo se verificó**
+
+El README quedó actualizado en GitHub. La ejecución en la computadora de los integrantes debe comprobarse por separado.
+
+### Revisión de legibilidad del código
+
+**El prompt**
+
+> Wey, hacelo como que todo lo escribimos personas no Ia, no tan perfecto, bien pero no ia
+
+**Qué contestó y qué se cambió**
+
+La IA reescribió partes de los diez ejercicios, simplificando variables, comentarios y algunas instrucciones. También se reforzaron pruebas relacionadas con el archivo de mediciones.
+
+**Cómo se verificó**
+
+Los cambios quedaron registrados en GitHub. Falta dejar constancia de la ejecución local final de esta versión con Python 3.12.10.
+
+---
+
+**Nota sobre el uso de IA:** La IA intervino tanto en la generación y revisión de código como en la organización y redacción de la documentación. Las diez preguntas por ejercicio son formulaciones para estudiar, no sustitutos de los mensajes literales. Este apartado recoge mensajes originales de la conversación, pero la bitácora debe completarse con otros intercambios y resultados de pruebas si se usa como registro exhaustivo.
+
