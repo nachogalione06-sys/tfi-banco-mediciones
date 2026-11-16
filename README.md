@@ -7,7 +7,7 @@ El trabajo consiste en hacer un programa en Python que se conecte a un instrumen
 ## Integrantes
 
 - Ignacio Galione
-- Falta agregar nombre y apellido
+- Nicolas Ariel Flores
 - Falta agregar nombre y apellido
 - Falta agregar nombre y apellido
 
